@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { isAuthenticated, logout } from "../../auth";
 // import { useSelector } from "react-redux";
 import axios from "axios";
+import "./Home.css";
 
 export default function Home() {
   const { email } = isAuthenticated();
@@ -24,20 +25,32 @@ export default function Home() {
   const GetListAnimal = () => {
     return listAnimal.map((element) => {
       return (
-        <div key={element.id}>
-          <p>{element.name}</p>
+        <div className="card" key={element.id}>
+          <img src={element.avatar} alt="Avatar" style={{ width: "100%" }} />
+          <div className="content">
+            <span>{element.id}</span>
+            <h4>
+              <b>{element.name}</b>
+            </h4>
+          </div>
         </div>
       );
     });
   };
 
   return (
-    <div>
-      <h1>
-        Welcome <span>{email}</span>
-      </h1>
-      <button onClick={logout}>Logout</button>
-      <GetListAnimal />
+    <div className="bodyHome">
+      <div className="header ">
+        <h1>
+          Welcome <span>{email}</span>
+        </h1>
+        <button className="btn-logout" onClick={logout}>
+          Logout
+        </button>
+      </div>
+      <div className="container">
+        <GetListAnimal />
+      </div>
     </div>
   );
 }
