@@ -1,5 +1,5 @@
 .bodyHome {
-  width: 80%;
+  /* width: 80%; */
   margin: 0 auto;
 }
 
@@ -9,6 +9,8 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  width: 80%;
+  margin: 0 auto;
 }
 .header {
   padding: 10px 0;
@@ -27,21 +29,40 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   width: 30%;
-
   margin: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
+.card img {
+  transition: 0.5s;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.card:hover img {
+  transform: scale(1.1);
+}
+.img-animal {
+  width: 405px;
+  overflow: hidden;
+  height: 307px;
+}
+
 .content {
   padding: 2px 16px;
   display: flex;
   justify-content: space-between;
+}
+.content a {
+  text-decoration: none;
+  color: #fff;
 }
 
 .content {
@@ -60,14 +81,73 @@
   font-weight: bold;
   color: #fff;
 }
+.welcome {
+  padding: 50px 0;
+  font-weight: 700;
+  font-size: 40px;
+  font-family: "Roboto";
+  position: relative;
+}
+
+.line {
+  width: 60px;
+  margin: 0 auto 50px;
+  background-color: yellow;
+  height: 5px;
+}
+
+.background {
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+
+@media screen and (max-width: 1700px) {
+  .container {
+    width: 95%;
+  }
+}
 
 @media screen and (max-width: 1250px) {
   .card {
-    width: 45%;
+    width: 36%;
   }
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 985px) {
   .card {
-    width: 86%;
+    width: 46%;
+  }
+}
+@media screen and (max-width: 960px) {
+  .container {
+    width: 47%;
+  }
+  .card {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 890px) {
+  .container {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 840px) {
+  .container {
+    width: 56%;
+  }
+}
+@media screen and (max-width: 789px) {
+  .container {
+    width: 56%;
+  }
+}
+@media screen and (max-width: 560px) {
+  .container {
+    width: 82%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .container {
+    width: 98%;
   }
 }
